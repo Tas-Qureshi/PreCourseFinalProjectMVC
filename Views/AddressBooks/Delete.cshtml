@@ -1,0 +1,38 @@
+@model AddressBookVM
+<form asp-controller="AddressBooks" asp-action="Delete" method="Post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Address Book</h2>
+            <hr />
+        </div>
+        <div class=" mb-3">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" disabled />
+        </div>
+        <div class=" mb-3">
+            <label asp-for="Street" class="control-label"></label>
+            <input asp-for="Street" class="form-control" disabled />
+        </div class=" mb-3">
+        <div class=" mb-3">
+            <label asp-for="StreetNo" class="control-label"></label>
+            <input asp-for="StreetNo" class="form-control" disabled />
+        </div>
+        <div class=" mb-3">
+            <label asp-for="City" class="control-label"></label>
+            <input asp-for="City" class="form-control" disabled />
+        </div>
+        <div class=" mb-3">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" disabled />
+        </div>
+        <div class=" mb-3">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" disabled />
+        </div class=" mb-3">
+        <br>
+        <input type="submit" value="Delete" class="btn btn-danger mx-2">
+        <i class="bi bi-trash"></i>Delete</a>
+        <a asp-controller="AddressBooks" asp-action="Index" class="btn btn-dangrous" style="width:150px">Back To
+            List</a>
+    </div>
+</form>

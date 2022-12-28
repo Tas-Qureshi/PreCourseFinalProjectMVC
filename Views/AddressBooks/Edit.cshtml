@@ -1,0 +1,50 @@
+@model AddressBookVM
+
+<form asp-controller="AddressBooks" asp-action="Edit" method="post">
+            <div class="row pb-2">
+            <h2 class="text-primary">Edit Address Book</h2>
+            <hr />
+        </div>
+<div class=" mb-3">
+<label asp-for="Name" class="control-label"></label>
+<input asp-for="Name" class="form-control" />
+<span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class=" mb-3">
+<label asp-for="Street" class="control-label"></label>
+<input asp-for="Street" class="form-control" />
+<span asp-validation-for="Street" class="text-danger"></span>
+</div>
+<div class=" mb-3">
+<label asp-for="StreetNo" class="control-label"></label>
+<input asp-for="StreetNo" class="form-control" />
+<span asp-validation-for="StreetNo" class="text-danger"></span>
+</div>
+<div class=" mb-3">
+<label asp-for="City" class="control-label"></label>
+<input asp-for="City" class="form-control" />
+<span asp-validation-for="City" class="text-danger"></span>
+</div>
+<div class=" mb-3">
+<label asp-for="Email" class="control-label"></label>
+<input asp-for="Email" class="form-control" />
+<span asp-validation-for="Email" class="text-danger"></span>
+</div>
+<div class=" mb-3">
+<label asp-for="PhoneNumber" class="control-label"></label>
+<input asp-for="PhoneNumber" class="form-control" />
+<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+</div>
+<br>
+ <input type="submit" value="Update" class="btn btn-primary" style="width:150px"/>
+ <a asp-controller="AddressBooks" asp-action="Index" class="btn btn-secondary" style="width:150px">Back To List</a>
+</div>
+</form>
+
+
+@*Client Side Validation*@
+@section Scripts{
+    @{  
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }

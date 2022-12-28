@@ -1,0 +1,78 @@
+@model List<AddressBook>
+@{
+    ViewData["Title"] = "Index Page";
+}
+
+@if (TempData["success"] != null)
+{
+
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script type="text/javascript">
+    toastr.success('@TempData["success"]')
+  </script>
+}
+<div>
+  <div class="row pt-4">
+    <div class="col-6">
+      <h1>Address Book List</h1>
+    </div>
+    <div class="col-6 text-end">
+      <a asp-controller="AddressBooks" asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> &nbsp;Create New Address Book</a>
+    </div>
+  </div>
+  <div class="col-6 form-group">
+    <form class="d-flex" method="get" asp-action="Index">
+      <input class="form-control me-sm-2" type="text" placeholder="Search" name="SearchString" />
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+  <a asp-action="Index">Back To List</a>
+
+  <br>
+  <br>
+  <table style="width:100%">
+    <thead>
+      <tr>
+        @*<th>ID</th>*@
+        <th>Name</th>
+        <th>Street</th>
+        <th>StreetNo</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>PhoneNumber</th>
+        <th></th>
+      </tr>
+    </thead>
+    @for (var i = 0; i < Model.Count; i++)
+    {
+      var items = Model[i];
+      var style = "";
+      if (i % 2 == 0)
+      {
+        style = "background-color: lightgray;";
+      }
+      <tr style="@style">
+        @*<td>@items.Id</td>*@
+        <td>@items.Name</td>
+        <td>@items.Street</td>
+        <td>@items.StreetNo</td>
+        <td>@items.City</td>
+        <td>@items.Email</td>
+        <td>@items.PhoneNumber</td>
+        <td>
+
+          <a asp-controller="AddressBooks" asp-action="Details" asp-route-id=@items.Id class="btn btn-primary mx-2">
+            <i class="bi bi-ticket-detailed"></i>Details</a>
+          <a asp-controller="AddressBooks" asp-action="Delete" asp-route-id=@items.Id class="btn btn-danger mx-2">
+            <i class="bi bi-trash"></i>Delete</a>
+          <a asp-controller="AddressBooks" asp-action="Edit" asp-route-id=@items.Id class="btn btn-primary mx-2">
+            <i class="bi bi-pencil-square"></i>Edit</a>
+
+        </td>
+      </tr>
+    }
+    </ul>
+  </table>
+</div>

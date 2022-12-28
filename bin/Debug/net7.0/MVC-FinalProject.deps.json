@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "MVC-FinalProject/1.0.0": {
+        "runtime": {
+          "MVC-FinalProject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MVC-FinalProject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
